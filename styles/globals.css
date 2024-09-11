@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  background: linear-gradient(192.05deg, #47bfdf 0%, #4a91ff 100%);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.wrap {
+  width: 420px;
+  margin: 0 auto;
+}
+.input-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 30px 0;
+
+  /* Контейнер для инпута */
+
+  position: relative; /* Относительное позиционирование для работы с абсолютными псевдоэлементами */
+
+  &::before {
+    content: "";
+    background-image: url("/images/Vector (28).png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 40px; /* Отступ справа */
+    top: 67%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    background-image: url("/images/arrow (1).png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 45px; /* Отступ слева */
+    top: 68%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+  }
+  input {
+    outline: 2px solid #006eff;
+    width: 354px;
+    height: 57px;
+    box-shadow: -6px 4px 4px 0px #ffffff1a inset,
+      2px -3px 6px 0px #0000001a inset;
+    border-radius: 15px;
+    padding-left: 40px; /* Отступ для иконки с левой стороны */
+    padding-right: 40px; /* Отступ для иконки с правой стороны */
+    &::placeholder {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22.79px;
+      text-align: left;
+      color: #838baa;
+      padding-inline: 10px 0;
+    }
+  }
+}
+center {
+  padding-block: 130px 0px;
+  .icon {
+    border-radius: 50%;
+    width: 30%;
+  }
+}
+
+.box-weather {
+  /* margin: 0 auto; */
+  padding-block: 17px 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border: 2px solid transparent;
+  flex-direction: column;
+  border-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.7),
+      rgba(191, 191, 191, 0.7)
+    )
+    2;
+  background: #ffffff4d;
+  width: 355px;
+  height: 335px;
+  border-radius: 20px;
+  span {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22.79px;
+    text-align: center;
+    color: white;
+  }
+  .gradus {
+    h2 {
+      color: white;
+      font-size: 100px;
+      font-weight: 600;
+      line-height: 126.6px;
+      text-align: center;
+      margin-block: 36px 0;
+    }
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-block: 30px 0;
+    .item {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      gap: 10px;
+      padding-block: 5px;
+      span {
+        width: 40px;
+        height: 28px;
+
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22.79px;
+        text-align: center;
+        color: white;
+      }
+      h4 {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22.79px;
+        text-align: center;
+        color: white;
+      }
+    }
+  }
+}
+
+h2 {
+  color: white;
+  font-size: 30px;
+  margin-block: 0 20px;
+  font-weight: 600;
+}
+
+.left {
+  padding: 50px 20px;
+}
+.betwen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 40px;
+  p {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30.38px;
+    text-align: left;
+    color: white;
+  }
+}
+.flex-box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  padding-inline: 35px 0;
+  padding-block: 30px 0;
+  width: 400px; /* Убедитесь, что родительский элемент имеет достаточную ширину */
+  overflow-x: auto; /* Используйте auto для автоматического появления скролла */
+  flex-wrap: nowrap; /* Элементы не будут переноситься на следующую строку */
+  scrollbar-width: none;
+  .item-flex {
+    width: 300px; /* Убедитесь, что ширина элемента достаточно велика */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 10px; /* Добавьте отступ между элементами, если нужно */
+
+    span,
+    p {
+      color: white;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 22.79px;
+      text-align: left;
+    }
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.flex-t {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-inline: 40px;
+  .elem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span,p{
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 22.79px;
+      text-align: left;
+      color: white;
+    }
+  }
+}
