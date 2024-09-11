@@ -3,8 +3,9 @@ import { useRouter } from "next/router";
 function Weather_One({ data, city }) {
     const router = useRouter()
     const currentDate = new Date().toLocaleDateString()
+    const { id } = router.query
     const handleClick = () => {
-        router.push(`/weather/${city}`);
+        router.push(`/weather/${id}`);
     }
   return (
     <>
